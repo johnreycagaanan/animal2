@@ -27,6 +27,6 @@ const spayAndNeuterSchema = new Schema(
 );
 
 const SpayAndNeuter =
-  models.spayAndNeuters || model("SpayAndNeuter", spayAndNeuterSchema);
+  models.SpayAndNeuter || model("SpayAndNeuter", spayAndNeuterSchema);
 
 export default SpayAndNeuter;

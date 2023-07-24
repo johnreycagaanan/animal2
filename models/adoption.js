@@ -46,6 +46,6 @@ const adoptionSchema = new Schema(
   }
 );
 
-const Adoption = models.adoptions || model("Adoption", adoptionSchema);
+const Adoption = models.Adoption || model("Adoption", adoptionSchema);
 
 export default Adoption;

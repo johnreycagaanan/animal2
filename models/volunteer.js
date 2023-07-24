@@ -42,6 +42,6 @@ const volunteerSchema = new Schema(
   }
 );
 
-const Volunteer = models.volunteers || model("Volunteer", volunteerSchema);
+const Volunteer = models.Volunteer || model("Volunteer", volunteerSchema);
 
 export default Volunteer;

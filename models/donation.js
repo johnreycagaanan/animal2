@@ -23,6 +23,6 @@ const donationSchema = new Schema(
   }
 );
 
-const Donation = models.donations || model("Donation", donationSchema);
+const Donation = models.Donation || model("Donation", donationSchema);
 
 export default Donation;

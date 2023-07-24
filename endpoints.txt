@@ -1,0 +1,11 @@
+1.Login - POST
+/api/users/login
+
+2.Logout - GET
+/api/users/logout
+
+3.Signup - POST
+/api/users/signup 
+
+4.Add event - POST (requires bearer token)
+/api/event

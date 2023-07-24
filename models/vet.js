@@ -31,6 +31,6 @@ const vetSchema = new Schema(
   }
 );
 
-const Vet = models.vets || model("Vet", vetSchema);
+const Vet = models.Vet || model("Vet", vetSchema);
 
 export default Vet;

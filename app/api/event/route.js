@@ -4,11 +4,11 @@ import { getDataFromToken } from "@/helpers/getDataFromToken";
 import { NextResponse } from "next/server";
 
 connectToDB();
-const userData = getDataFromToken(request);
-const userId = userData.id;
 
 export async function POST(request) {
   try {
+    const userData = getDataFromToken(request);
+    const userId = userData.id;
     const reqBody = await request.json();
 
     console.log("userData", userData);

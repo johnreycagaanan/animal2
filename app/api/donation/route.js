@@ -1,14 +1,20 @@
 import { connectToDB } from "@/utils/database";
 import Donation from "@/models/donation";
-// import { getDataFromToken } from "@/helpers/getDataFromToken";
+import { getDataFromToken } from "@/helpers/getDataFromToken";
 import { NextResponse } from "next/server";
 
 connectToDB();
-// const userData = getDataFromToken(request);
-// const userId = userData.id;
 
 export async function POST(request) {
   try {
+    const userData = getDataFromToken(request);
+    const userId = userData.id;
+    if (!userData) {
+      return NextResponse.json({
+        status: 401,
+        message: "Unauthorized access",
+      });
+    }
     const reqBody = await request.json();
 
     const { donor, donationType, date } = reqBody;
