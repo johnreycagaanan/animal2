@@ -4,12 +4,13 @@ import { getDataFromToken } from "@/helpers/getDataFromToken";
 import { NextResponse } from "next/server";
 
 connectToDB();
+const userData = getDataFromToken(request);
+const userId = userData.id;
 
 export async function POST(request) {
   try {
     const reqBody = await request.json();
-    const userData = getDataFromToken(request);
-    const userId = userData.id;
+
     console.log("userData", userData);
     const { title, details, date } = reqBody;
 
@@ -26,6 +27,7 @@ export async function POST(request) {
       success: true,
       message: "Event added successfully",
       status: 201,
+      event,
     });
   } catch (error) {
     return NextResponse.json({
