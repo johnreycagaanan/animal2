@@ -16,7 +16,7 @@ const vetSchema = new Schema(
     },
     skills: [
       {
-        type: Date,
+        type: String,
       },
     ],
     education: {
