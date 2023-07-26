@@ -1,7 +1,7 @@
 import mongoose, { Schema, models, model } from "mongoose";
 const validator = require("validator");
 
-const volunteerSchema = new Schema(
+const VolunteerSchema = new Schema(
   {
     email: {
       type: String,
@@ -42,6 +42,6 @@ const volunteerSchema = new Schema(
   }
 );
 
-const Volunteer = models.Volunteer || model("Volunteer", volunteerSchema);
+const Volunteer = models.Volunteer || model("Volunteer", VolunteerSchema);
 
 export default Volunteer;
