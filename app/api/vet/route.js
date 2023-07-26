@@ -36,3 +36,33 @@ export async function POST(request) {
     });
   }
 }
+
+export async function GET(request) {
+  try {
+    const vets = await Vet.find();
+    return NextResponse.json({
+      status: 200,
+      vets,
+    });
+  } catch (error) {
+    return NextResponse.json({
+      status: 500,
+      message: error.message,
+    });
+  }
+}
+
+export async function DELETE(request) {
+  try {
+    await Vet.deleteMany();
+    return NextResponse.json({
+      status: 200,
+      message: "Deleted successfully",
+    });
+  } catch (error) {
+    return NextResponse.json({
+      status: 500,
+      message: error.message,
+    });
+  }
+}
